@@ -1,0 +1,40 @@
+.alert-modal {
+    position: fixed;
+    top: var(--space-md);
+    left: 50%;
+    z-index: 10;
+    width: min(92vw, 440px);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    background: var(--bg-secun);
+    transform: translateX(-50%);
+    transition: 0.4s ease;
+    box-shadow: var(--shDw-1);
+}
+
+.alert-modal[data-kind="warning"] { background: var(--bg-warn); color: #3b2a00; }
+.alert-modal[data-kind="success"] { background: var(--bg-ok); }
+.alert-modal[data-kind="info"] { background: var(--bg-prima); }
+
+.alert-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-30px) scale(0.9);
+}
+
+.alert-modal .icon {
+    font-size: 23px;
+    font-style: normal;
+}
+
+.alert-modal .title-message {
+    font-size: 1rem;
+}
+
+.alert-modal .message {
+    font-size: 0.9rem;
+}
