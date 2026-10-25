@@ -1,0 +1,11 @@
+export const form = document.getElementById('form');
+export const input = document.getElementById('input');
+export const btnSearch = document.getElementById('btnSearch');
+export const btnLocation = document.getElementById('btnLocation');
+export const unitToggle = document.getElementById('unitToggle');
+export const alert = document.getElementById('alert');
+export const iconAlert = document.getElementById('icon');
+export const titleAlert = document.getElementById('titleMessage');
+export const messageAlert = document.getElementById('message');
+export const root = document.getElementById('root');
+export const soundOk = document.getElementById('soundOk');
