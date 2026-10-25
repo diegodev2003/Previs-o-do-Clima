@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#127aff">
+  <meta name="description" content="Previsão do tempo por cidade ou localização, com próximos dias.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./src/img/icon-192.png">
+  <link rel="apple-touch-icon" href="./src/img/icon-192.png">
+  <link rel="stylesheet" href="./src/css/main.css">
+  <title>Previsão do Tempo</title>
+  <script type="module" src="./src/js/main.js"></script>
+</head>
+
+<body>
+  
+  <main class="container">
+    
+    <header class="topo-header">
+      <div class="title-row">
+        <h1 class="title">Previsão do Tempo</h1>
+        <button id="unitToggle" class="btn-unit" type="button" aria-label="Alternar entre Celsius e Fahrenheit">°C</button>
+      </div>
+      
+      <form id="form" class="box-input" role="search">
+        <input id="input" class="input-city" type="text" placeholder=" " autocomplete="off" autocapitalize="words" enterkeyhint="search" maxlength="80">
+        <label for="input">Digite sua cidade</label>
+        
+        <button id="btnLocation" class="btn-location" type="button" aria-label="Usar minha localização" title="Usar minha localização" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
+          </svg>
+        </button>
+        
+        <button id="btnSearch" class="btn-search-city" type="submit" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+          </svg>
+        </button>
+      </form>
+    </header>
+    
+    <section id="root" class="box-card" aria-live="polite" aria-busy="false"></section>
+    
+    <div id="alert" class="alert-modal hidden" role="alert" aria-live="assertive">
+      <i id="icon" class="icon" aria-hidden="true"></i>
+      <div class="box-message">
+        <h2 id="titleMessage" class="title-message"></h2>
+        <p id="message" class="message"></p>
+      </div>
+    </div>
+    
+  </main>
+  
+  <audio id="soundOk" src="./src/sound/notification.mp3" preload="auto"></audio>
+  
+</body>
+
+</html>
